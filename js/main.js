@@ -221,23 +221,31 @@
     }
   }, { passive: false });
 
-  /* свайпы на телефоне */
+  /* свайпы на телефоне: один свайп — ровно один шаг, направление определяем
+     только когда одна ось заметно превосходит другую, иначе дрожь руки при
+     тапе или диагональный жест случайно листают не то */
+  const SWIPE_MIN = 36; // px: ниже этого порога жест не засчитывается вовсе
+  const SWIPE_AXIS_RATIO = 1.4; // во столько раз одна ось должна быть больше другой
   let touchStart = null;
   xmb.addEventListener('pointerdown', (e) => {
     if (e.pointerType === 'mouse') return;
-    touchStart = { x: e.clientX, y: e.clientY };
+    touchStart = { x: e.clientX, y: e.clientY, id: e.pointerId };
     swiped = false;
+    xmb.setPointerCapture(e.pointerId); // жест остаётся «нашим», даже если палец съедет на дочерний элемент
   });
   xmb.addEventListener('pointerup', (e) => {
-    if (!touchStart) return;
+    if (!touchStart || e.pointerId !== touchStart.id) return;
     const dx = e.clientX - touchStart.x;
     const dy = e.clientY - touchStart.y;
     touchStart = null;
-    if (Math.max(Math.abs(dx), Math.abs(dy)) < 30) return;
+    const adx = Math.abs(dx);
+    const ady = Math.abs(dy);
+    if (Math.max(adx, ady) < SWIPE_MIN) return; // слишком короткий жест — это был тап, а не свайп
+    if (Math.max(adx, ady) < Math.min(adx, ady) * SWIPE_AXIS_RATIO) return; // слишком по диагонали — ось не ясна
     swiped = true;
     setTimeout(() => { swiped = false; }, 400);
-    if (Math.abs(dx) > Math.abs(dy)) selectCat(current - Math.sign(dx));
-    else selectItem(selected[current] - Math.sign(dy) * Math.max(1, Math.round(Math.abs(dy) / geo.step)));
+    if (adx > ady) selectCat(current - Math.sign(dx));
+    else selectItem(selected[current] - Math.sign(dy));
   });
   xmb.addEventListener('pointercancel', () => { touchStart = null; });
 
