@@ -190,7 +190,7 @@ a { color: inherit; }
   font-size: clamp(12.5px, 1.05vw, 15px);
   font-weight: 600;
   color: var(--ink-dim);
-  opacity: 0;
+  opacity: .62; /* подписи видны у всех разделов, а не только у выбранного */
   transition: opacity .25s;
 }
 .xmb-cat.is-current { opacity: 1; }
@@ -391,4 +391,12 @@ img[src*="icons/"] { opacity: .75; }
 .hint__k { margin: 0 6px 0 10px; padding: 2px 8px; border-radius: 6px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); color: var(--ink-dim); }
 .hint__k:first-child { margin-left: 0; }
 .js:not(.xmb-on) .hint { display: none; }
-@media (max-width: 640px) { .hint { display: none; } }
+@media (max-width: 640px) { .hint { font-size: 13px; line-height: 1.4; } }
+@media (max-width: 260px) { .hint { display: none; } }
+
+/* ---------- Заголовок «что это за сайт» ---------- */
+.hero { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; padding: 48px 20px 0; text-align: center; pointer-events: none; }
+.xmb-on .hero { position: fixed; top: clamp(24px, 5vh, 56px); left: 0; right: 0; max-width: none; margin: 0; padding: 0 20px; }
+.hero__title { margin: 0; font-family: var(--font-head); font-weight: 800; font-size: clamp(22px, 2.6vw, 34px); line-height: 1.2; letter-spacing: .01em; color: var(--ink); }
+.hero__sub { margin: 6px auto 0; max-width: 640px; font-size: clamp(13.5px, 1.1vw, 16px); line-height: 1.45; color: var(--ink-dim); }
+@media (max-height: 600px), (max-width: 260px) { .xmb-on .hero { display: none; } }
