@@ -127,7 +127,6 @@
 
     // листаем пункты — на телефоне прячем термометр, чтобы не мешался
     root.classList.toggle('items-scrolled', selected[current] > 0);
-    // стикерам (js/stickers.js): какой пункт выбран, чтобы играл только он
     document.dispatchEvent(new Event('xmb:render'));
   };
 
