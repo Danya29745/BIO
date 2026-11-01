@@ -56,5 +56,52 @@
     if (k) select(k, { remember: false });
   });
 
+  /* ---------- Окошко с примером ---------- */
+  const dlg = document.getElementById('dlg');
+  if (dlg) {
+    const stage = document.getElementById('dlg-stage');
+    const title = document.getElementById('dlg-title');
+    const cta = document.getElementById('dlg-cta');
+
+    /* Нарисованный QR-подобный узор для примера: одинаковый при каждом открытии */
+    const drawQr = (el) => {
+      const n = 21;
+      let seed = 7;
+      const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);
+      const inFinder = (x, y) => (x < 8 && y < 8) || (x > n - 9 && y < 8) || (x < 8 && y > n - 9);
+      let d = '';
+      for (let y = 0; y < n; y++) {
+        for (let x = 0; x < n; x++) {
+          if (!inFinder(x, y) && rnd() > 0.52) d += `M${x + 2} ${y + 2}h1v1h-1z`;
+        }
+      }
+      const finder = (ox, oy) =>
+        `<path d="M${ox} ${oy}h7v7h-7zM${ox + 1} ${oy + 1}v5h5v-5z" fill-rule="evenodd"/>` +
+        `<rect x="${ox + 2}" y="${oy + 2}" width="3" height="3"/>`;
+      el.innerHTML =
+        `<svg viewBox="0 0 ${n + 4} ${n + 4}" shape-rendering="crispEdges" aria-hidden="true">` +
+        `<rect width="${n + 4}" height="${n + 4}" fill="#fff"/><g fill="#0e1a24">` +
+        `<path d="${d}"/>${finder(2, 2)}${finder(n - 5, 2)}${finder(2, n - 5)}</g></svg>`;
+    };
+
+    const openExample = (slug) => {
+      const tpl = document.getElementById(`ex-${slug}`);
+      if (!tpl) return;
+      stage.replaceChildren(tpl.content.cloneNode(true));
+      stage.querySelectorAll('[data-qr]').forEach(drawQr);
+      title.textContent = tpl.dataset.title;
+      cta.href = `${base}?text=${encodeURIComponent(HELLO + (tpl.dataset.msg || ''))}`;
+      dlg.querySelector('.dlg__body').scrollTop = 0;
+      dlg.showModal();
+    };
+
+    document.querySelectorAll('[data-example]').forEach((b) =>
+      b.addEventListener('click', () => openExample(b.dataset.example)));
+
+    dlg.querySelector('[data-close]').addEventListener('click', () => dlg.close());
+    /* Клик по затемнению закрывает окошко. Esc работает сам */
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  }
+
   select(fromHash() || keys[0], { remember: false });
 })();

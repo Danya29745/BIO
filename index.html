@@ -44,7 +44,7 @@
 
   <!-- Живая часть: «ответ бота» с клавиатурой услуг -->
   <section class="field" aria-labelledby="need">
-    <h2 class="field__title rise" id="need" style="--d:300ms">Что нужно?</h2>
+    <h2 class="field__title rise" id="need" style="--d:300ms">Моё портфолио и примеры</h2>
 
     <div class="panels rise" style="--d:360ms">
 
@@ -55,7 +55,10 @@
           <div><dt>Что внутри</dt><dd>Свой дизайн, адаптация под телефон и компьютер, аккуратная разметка для поиска</dd></div>
           <div><dt>Стек</dt><dd>HTML, CSS и JS, без конструкторов</dd></div>
         </dl>
-        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Хочу заказать сайт с нуля. Задача: " target="_blank" rel="noopener">Заказать сайт</a>
+        <div class="panel__actions">
+          <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Хочу заказать сайт с нуля. Задача: " target="_blank" rel="noopener">Заказать сайт</a>
+          <button class="btn btn--ghost" type="button" data-example="site">Показать пример</button>
+        </div>
       </article>
 
       <article class="panel" id="p-bot" role="tabpanel" aria-labelledby="k-bot">
@@ -66,7 +69,10 @@
           <div><dt>Умеют</dt><dd>Заявки, оплата, рассылки, админ-панель. От простого до сложного</dd></div>
           <div><dt>Стек</dt><dd>Python, aiogram</dd></div>
         </dl>
-        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Хочу заказать бота. Платформа и задача: " target="_blank" rel="noopener">Заказать бота</a>
+        <div class="panel__actions">
+          <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Хочу заказать бота. Платформа и задача: " target="_blank" rel="noopener">Заказать бота</a>
+          <button class="btn btn--ghost" type="button" data-example="bot">Показать пример</button>
+        </div>
       </article>
 
       <article class="panel" id="p-memory" role="tabpanel" aria-labelledby="k-memory">
@@ -77,7 +83,10 @@
           <div><dt>Что получишь</dt><dd>Личную страницу и QR-код для печати: на табличку, в некролог или на мемориальную доску</dd></div>
           <div><dt>Как работаем</dt><dd>Присылаешь данные, утверждаем дизайн, дальше я собираю страницу</dd></div>
         </dl>
-        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Хочу заказать страницу памяти." target="_blank" rel="noopener">Заказать страницу</a>
+        <div class="panel__actions">
+          <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Хочу заказать страницу памяти." target="_blank" rel="noopener">Заказать страницу</a>
+          <button class="btn btn--ghost" type="button" data-example="memory">Показать пример</button>
+        </div>
       </article>
 
       <article class="panel" id="p-cert" role="tabpanel" aria-labelledby="k-cert">
@@ -87,7 +96,10 @@
           <div><dt>Приложения</dt><dd>MAX, ВКонтакте, Авито и любые другие, удалённые из App Store</dd></div>
           <div><dt>Устройство</dt><dd>iPhone</dd></div>
         </dl>
-        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Нужен сертификат на iPhone для приложения: " target="_blank" rel="noopener">Настроить сертификат</a>
+        <div class="panel__actions">
+          <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Нужен сертификат на iPhone для приложения: " target="_blank" rel="noopener">Настроить сертификат</a>
+          <button class="btn btn--ghost" type="button" data-example="cert">Показать пример</button>
+        </div>
       </article>
 
       <article class="panel" id="p-fix" role="tabpanel" aria-labelledby="k-fix">
@@ -98,7 +110,10 @@
           <div><dt>Проверить</dt><dd>Найду ошибки в сайте или боте и исправлю</dd></div>
           <div><dt>Запустить</dt><dd>Помогу выложить проект в сеть и настроить, чтобы он заработал</dd></div>
         </dl>
-        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Есть проект, который нужно доработать, проверить или запустить: " target="_blank" rel="noopener">Обсудить проект</a>
+        <div class="panel__actions">
+          <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Есть проект, который нужно доработать, проверить или запустить: " target="_blank" rel="noopener">Обсудить проект</a>
+          <button class="btn btn--ghost" type="button" data-example="fix">Показать пример</button>
+        </div>
       </article>
 
       <article class="panel" id="p-fishing" role="tabpanel" aria-labelledby="k-fishing">
@@ -108,13 +123,19 @@
           <div><dt>Бронирование</dt><dd>С мониторингом и собственной базой данных</dd></div>
           <div><dt>Защита</dt><dd>От DDoS-атак и ботов, которые шлют фейковые заявки</dd></div>
         </dl>
-        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Мне понравился сайт «Рыбалка у Иваныча», хочу похожий проект." target="_blank" rel="noopener">Хочу такой же</a>
+        <div class="panel__actions">
+          <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Мне понравился сайт «Рыбалка у Иваныча», хочу похожий проект." target="_blank" rel="noopener">Хочу такой же</a>
+          <button class="btn btn--ghost" type="button" data-example="fishing">Показать пример</button>
+        </div>
       </article>
 
       <article class="panel" id="p-more" role="tabpanel" aria-labelledby="k-more">
         <h3 class="panel__title">И не только</h3>
         <p class="panel__lede">Нужно что-то другое? Опиши задачу как есть, идея может быть сырой. Скажу, возьмусь ли и за какой срок.</p>
-        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="У меня другая задача: " target="_blank" rel="noopener">Описать задачу</a>
+        <div class="panel__actions">
+          <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="У меня другая задача: " target="_blank" rel="noopener">Описать задачу</a>
+          <button class="btn btn--ghost" type="button" data-example="more">Показать пример</button>
+        </div>
       </article>
 
     </div>
@@ -158,6 +179,136 @@
   </section>
 
 </main>
+
+
+<!-- Окошко с примером: содержимое берётся из <template id="ex-…"> ниже -->
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg__head">
+    <h3 class="dlg__title" id="dlg-title"></h3>
+    <button class="btn btn--ghost dlg__close" type="button" data-close>Закрыть</button>
+  </div>
+  <div class="dlg__body">
+    <p class="dlg__note">Пример оформления. Все имена и данные в нём вымышленные.</p>
+    <div class="dlg__stage" id="dlg-stage"></div>
+  </div>
+  <div class="dlg__foot">
+    <a class="btn" id="dlg-cta" href="https://t.me/ТВОЙ_НИК" target="_blank" rel="noopener">Хочу такой же</a>
+  </div>
+</dialog>
+
+<template id="ex-site" data-title="Пример: сайт с нуля" data-msg="Мне понравился пример сайта, хочу похожий. Задача: ">
+  <div class="ex-browser">
+    <div class="ex-browser__bar"><i></i><i></i><i></i><span class="ex-browser__url">zerno-coffee.ru</span></div>
+    <div class="ex-site">
+      <div class="ex-site__nav"><span>Зерно</span><span>Меню &nbsp; Адрес &nbsp; Контакты</span></div>
+      <h4>Кофе, который стоит дожидаться</h4>
+      <span class="ex-site__btn">Забронировать столик</span>
+      <div class="ex-site__row">
+        <div><b>Эспрессо</b><br>Обжарка этой недели</div>
+        <div><b>Фильтр</b><br>Три способа заварки</div>
+        <div><b>Десерты</b><br>Свежая выпечка утром</div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template id="ex-bot" data-title="Пример: бот для записи" data-msg="Мне понравился пример бота, хочу похожего. Задача: ">
+  <div class="ex-split">
+    <div class="ex-chat">
+      <p class="ex-msg">Привет! Что хотите заказать?</p>
+      <div class="ex-keys"><span>Стрижка</span><span>Окрашивание</span></div>
+      <p class="ex-msg ex-msg--me">Стрижка</p>
+      <p class="ex-msg">Выберите время</p>
+      <div class="ex-keys"><span>12:00</span><span>14:30</span><span>17:00</span></div>
+      <p class="ex-msg ex-msg--me">14:30</p>
+      <p class="ex-msg">Записал вас на 14:30. Оплатите онлайн, чтобы подтвердить запись.</p>
+      <div class="ex-keys"><span>Оплатить</span></div>
+    </div>
+    <div class="ex-admin">
+      <p class="ex-admin__head">Что видит администратор</p>
+      <p class="ex-admin__row"><b>Новая запись</b>Стрижка, 14:30, оплачено</p>
+      <p class="ex-admin__row"><b>Рассылка</b>Напоминание клиентам за день до визита</p>
+      <p class="ex-admin__row"><b>Панель</b>Все заявки, оплаты и клиенты в одном месте</p>
+    </div>
+  </div>
+</template>
+
+<template id="ex-memory" data-title="Пример: страница памяти" data-msg="Мне понравился пример страницы памяти, хочу заказать такую. ">
+  <div class="ex-memory">
+    <div class="ex-memory__top">
+      <div class="ex-memory__photo" aria-hidden="true">ИС</div>
+      <div>
+        <h4>Иван Петрович Сидоров</h4>
+        <p class="ex-memory__years">1941 – 2019</p>
+        <p>Всю жизнь проработал на одном заводе и столько же лет ходил на рыбалку к одной и той же реке. Любил рассказывать истории, а чай заваривал только по-своему.</p>
+      </div>
+    </div>
+    <ul class="ex-memory__facts">
+      <li>Родился в маленьком городе у реки</li>
+      <li>Двое детей, четверо внуков</li>
+      <li>Лучшая шутка: про щуку, которая ушла</li>
+    </ul>
+    <div class="ex-memory__qr">
+      <span data-qr="memory" class="ex-qr" role="img" aria-label="Пример QR-кода"></span>
+      <p><b>QR-код для печати</b>Табличка на памятнике, строчка в некрологе или мемориальная доска: навёл камеру, и страница открыта.</p>
+    </div>
+  </div>
+</template>
+
+<template id="ex-cert" data-title="Пример: сертификат на iPhone" data-msg="Нужен сертификат на iPhone для приложения: ">
+  <div class="ex-split">
+    <div class="ex-phone">
+      <p class="ex-phone__title">Профиль установлен</p>
+      <p class="ex-phone__row"><b>Сертификат</b>Действителен</p>
+      <p class="ex-phone__row"><b>Приложение</b>MAX запускается</p>
+      <p class="ex-phone__row"><b>Устройство</b>iPhone</p>
+    </div>
+    <div class="ex-admin">
+      <p class="ex-admin__head">Как это проходит</p>
+      <ol class="ex-steps">
+        <li>Ты называешь приложение, которого нет в App Store</li>
+        <li>Я готовлю сертификат и присылаю инструкцию</li>
+        <li>Вместе доводим до запуска, пока приложение не заработает</li>
+      </ol>
+    </div>
+  </div>
+</template>
+
+<template id="ex-fix" data-title="Пример: доработка и запуск" data-msg="Есть проект, который нужно доработать, проверить или запустить: ">
+  <div class="ex-fix">
+    <div class="ex-fix__row ex-fix__row--head"><p>Было</p><p>Стало</p></div>
+    <div class="ex-fix__row"><p class="was">Форма заявки не отправляется</p><p class="now">Заявка приходит владельцу в Telegram</p></div>
+    <div class="ex-fix__row"><p class="was">На телефоне текст уезжает за край</p><p class="now">Страница читается на любом экране</p></div>
+    <div class="ex-fix__row"><p class="was">Проект лежит только на компьютере</p><p class="now">Выложен в сеть и открывается по ссылке</p></div>
+    <div class="ex-fix__row"><p class="was">Нет способа обработать заявки</p><p class="now">Добавлена админ-панель</p></div>
+  </div>
+</template>
+
+<template id="ex-fishing" data-title="Пример: сайт рыболовной базы" data-msg="Мне понравился сайт «Рыбалка у Иваныча», хочу похожий проект. ">
+  <div class="ex-split">
+    <div class="ex-form">
+      <p class="ex-admin__head">Гость бронирует сам</p>
+      <div class="ex-field"><span>Дата заезда</span><b>12 июля</b></div>
+      <div class="ex-field"><span>Гостей</span><b>3</b></div>
+      <div class="ex-field"><span>Имя</span><b>Алексей</b></div>
+      <span class="ex-form__btn">Забронировать</span>
+    </div>
+    <div class="ex-admin">
+      <p class="ex-admin__head">Админ-панель</p>
+      <p class="ex-admin__row"><b>Алексей, 12 июля</b><span class="ex-chip ex-chip--new">Новая</span></p>
+      <p class="ex-admin__row"><b>Мария, 19 июля</b><span class="ex-chip ex-chip--ok">Подтверждена</span></p>
+      <p class="ex-admin__row"><b>Заявка с подозрительным адресом</b><span class="ex-chip ex-chip--bot">Отсеяна защитой</span></p>
+    </div>
+  </div>
+</template>
+
+<template id="ex-more" data-title="Пример: нестандартная задача" data-msg="У меня другая задача: ">
+  <div class="ex-chat ex-chat--solo">
+    <p class="ex-msg ex-msg--me">Хочу бота, который напоминает клиентам о записи и сам собирает отзывы. Пока это просто идея.</p>
+    <p class="ex-msg">Понял. Задам пару вопросов и скажу, возьмусь ли и за какой срок.</p>
+    <p class="ex-msg">Идея может быть сырой: остальное разберём вместе.</p>
+  </div>
+</template>
 
 <script src="js/main.js"></script>
 </body>
