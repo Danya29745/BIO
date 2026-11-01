@@ -1,276 +1,164 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Данил — сайты и боты</title>
-  <meta name="description" content="Данил: делаю сайты и ботов для Telegram, ВКонтакте и MAX. От идеи до рабочего результата.">
+  <meta name="description" content="Данил делает сайты и ботов для Telegram, ВКонтакте и MAX. Всё сам: от идеи до рабочего результата.">
   <meta property="og:title" content="Данил — сайты и боты">
   <meta property="og:description" content="Сайты и боты для Telegram, ВКонтакте и MAX. От идеи до рабочего результата.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#071721">
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#edf1f4">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a131a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A5BFF'/%3E%3Ctext x='32' y='47' font-size='44' font-weight='800' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3E%D0%94%3C/text%3E%3C/svg%3E">
 
-  <link rel="preload" href="assets/fonts/nunito-cyrillic-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/onest-cyrillic-500-normal.woff2" as="font" type="font/woff2" crossorigin>
-
-  <link rel="stylesheet" href="css/style.css?v=2">
-  <script src="js/boot.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700;800&display=swap&subset=cyrillic">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.className = 'js';</script>
 </head>
 <body>
 
-  <!-- Фон: плавные ленты в духе меню старой приставки, рисует js/waves.js -->
-  <div class="bg" aria-hidden="true"><canvas id="waves"></canvas></div>
+<main class="card">
 
-  <main class="xmb" id="xmb">
+  <!-- Первый экран: кто я и что делаю -->
+  <header class="hero">
+    <div class="bar rise">
+      <span class="mark">Данил</span>
+      <a class="bar__link" href="https://github.com/Danya29745" target="_blank" rel="noopener">GitHub</a>
+    </div>
 
-    <!-- Обо мне -->
-    <section class="cat" id="about" data-icon="assets/icons/cat-about.svg">
-    <h2 class="cat__label">Обо мне</h2>
-    <ul class="cat__items">
-      <li class="item item--cta">
-        <div class="item__row">
-          <span class="item__icon item__icon--photo"><span class="avatar"><img src="assets/avatar.svg" alt="Данил"></span></span>
-          <span class="item__text">
-            <span class="item__title">О себе</span>
-            <span class="item__sub">Данил, 23 года. Всё делаю сам: от идеи до рабочего результата.</span>
-          </span>
-        </div>
-        <div class="item__panel">
-          <p class="panel__note panel__note--accent">Нужен сайт или бот? Напиши, обсудим задачу и сроки.</p>
-          <dl class="panel__facts">
-            <div><dt>Делаю</dt><dd>Сайты и ботов, которые принимают заявки, оплату и делают рассылки</dd></div>
-            <div><dt>Заказать</dt><dd><a href="https://t.me/ТВОЙ_НИК" target="_blank" rel="noopener">Написать в Telegram</a></dd></div>
-          </dl>
-        </div>
+    <div class="hero__main">
+      <h1 class="hero__title">
+        <span class="rise" style="--d:60ms">Данил делает</span>
+        <span class="rise" style="--d:130ms">сайты и ботов</span>
+      </h1>
+      <p class="hero__lede rise" style="--d:220ms">
+        Мне 23 года, всё делаю сам: от идеи до рабочего результата. Сайты и боты для Telegram, ВКонтакте и MAX.
+      </p>
+      <a class="btn js-tg rise" style="--d:290ms" href="https://t.me/ТВОЙ_НИК" data-msg="Хочу обсудить задачу." target="_blank" rel="noopener">Написать в Telegram</a>
+    </div>
+  </header>
+
+  <!-- Живая часть: «ответ бота» с клавиатурой услуг -->
+  <section class="field" aria-labelledby="need">
+    <h2 class="field__title rise" id="need" style="--d:300ms">Что нужно?</h2>
+
+    <div class="panels rise" style="--d:360ms">
+
+      <article class="panel" id="p-site" role="tabpanel" aria-labelledby="k-site" data-active>
+        <h3 class="panel__title">Сайт с нуля</h3>
+        <p class="panel__lede">Сайт, собранный руками под твой проект, а не шаблон с чужими блоками.</p>
+        <dl class="facts">
+          <div><dt>Что внутри</dt><dd>Свой дизайн, адаптация под телефон и компьютер, аккуратная разметка для поиска</dd></div>
+          <div><dt>Стек</dt><dd>HTML, CSS и JS, без конструкторов</dd></div>
+        </dl>
+        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Хочу заказать сайт с нуля. Задача: " target="_blank" rel="noopener">Заказать сайт</a>
+      </article>
+
+      <article class="panel" id="p-bot" role="tabpanel" aria-labelledby="k-bot">
+        <h3 class="panel__title">Боты для Telegram, MAX и ВК</h3>
+        <p class="panel__lede">Бот, который работает за тебя: принимает заявки, берёт оплату и держит связь с клиентами.</p>
+        <dl class="facts">
+          <div><dt>Платформы</dt><dd>Telegram, MAX, ВКонтакте</dd></div>
+          <div><dt>Умеют</dt><dd>Заявки, оплата, рассылки, админ-панель. От простого до сложного</dd></div>
+          <div><dt>Стек</dt><dd>Python, aiogram</dd></div>
+        </dl>
+        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Хочу заказать бота. Платформа и задача: " target="_blank" rel="noopener">Заказать бота</a>
+      </article>
+
+      <article class="panel" id="p-memory" role="tabpanel" aria-labelledby="k-memory">
+        <h3 class="panel__title">Страница памяти</h3>
+        <p class="panel__lede">На памятнике мало места, а у страницы его хватит, чтобы рассказать о человеке по-настоящему.</p>
+        <dl class="facts">
+          <div><dt>Что пришлёшь</dt><dd>Фото, факты из жизни и всё, чем хочешь поделиться</dd></div>
+          <div><dt>Что получишь</dt><dd>Личную страницу и QR-код для печати: на табличку, в некролог или на мемориальную доску</dd></div>
+          <div><dt>Как работаем</dt><dd>Присылаешь данные, утверждаем дизайн, дальше я собираю страницу</dd></div>
+        </dl>
+        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Хочу заказать страницу памяти." target="_blank" rel="noopener">Заказать страницу</a>
+      </article>
+
+      <article class="panel" id="p-cert" role="tabpanel" aria-labelledby="k-cert">
+        <h3 class="panel__title">Сертификат на iPhone</h3>
+        <p class="panel__lede">Приложение пропало из App Store или не запускается? Помогу поставить сертификат и всё настроить.</p>
+        <dl class="facts">
+          <div><dt>Приложения</dt><dd>MAX, ВКонтакте, Авито и любые другие, удалённые из App Store</dd></div>
+          <div><dt>Устройство</dt><dd>iPhone</dd></div>
+        </dl>
+        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Нужен сертификат на iPhone для приложения: " target="_blank" rel="noopener">Настроить сертификат</a>
+      </article>
+
+      <article class="panel" id="p-fix" role="tabpanel" aria-labelledby="k-fix">
+        <h3 class="panel__title">Доработка и запуск</h3>
+        <p class="panel__lede">Проект уже есть, но что-то не так или не получается довести до конца? Посмотрю и скажу, что с этим делать.</p>
+        <dl class="facts">
+          <div><dt>Доработать</dt><dd>Добавлю функции и улучшу то, что уже сделано</dd></div>
+          <div><dt>Проверить</dt><dd>Найду ошибки в сайте или боте и исправлю</dd></div>
+          <div><dt>Запустить</dt><dd>Помогу выложить проект в сеть и настроить, чтобы он заработал</dd></div>
+        </dl>
+        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Есть проект, который нужно доработать, проверить или запустить: " target="_blank" rel="noopener">Обсудить проект</a>
+      </article>
+
+      <article class="panel" id="p-fishing" role="tabpanel" aria-labelledby="k-fishing">
+        <h3 class="panel__title">Рыбалка у Иваныча</h3>
+        <p class="panel__lede">Мой проект: сайт рыболовной базы с бронированием и админ-панелью. С нуля, на HTML, CSS и JS. Гость бронирует сам, администратор разбирает заявки в своей панели.</p>
+        <dl class="facts">
+          <div><dt>Бронирование</dt><dd>С мониторингом и собственной базой данных</dd></div>
+          <div><dt>Защита</dt><dd>От DDoS-атак и ботов, которые шлют фейковые заявки</dd></div>
+        </dl>
+        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="Мне понравился сайт «Рыбалка у Иваныча», хочу похожий проект." target="_blank" rel="noopener">Хочу такой же</a>
+      </article>
+
+      <article class="panel" id="p-more" role="tabpanel" aria-labelledby="k-more">
+        <h3 class="panel__title">И не только</h3>
+        <p class="panel__lede">Нужно что-то другое? Опиши задачу как есть, идея может быть сырой. Скажу, возьмусь ли и за какой срок.</p>
+        <a class="btn" href="https://t.me/ТВОЙ_НИК" data-msg="У меня другая задача: " target="_blank" rel="noopener">Описать задачу</a>
+      </article>
+
+    </div>
+
+    <div class="keys rise" style="--d:420ms" role="tablist" aria-labelledby="need">
+      <button class="key" type="button" role="tab" id="k-site"     data-slug="site"     aria-controls="p-site"     aria-selected="true">Сайт с нуля</button>
+      <button class="key" type="button" role="tab" id="k-bot"      data-slug="bot"      aria-controls="p-bot"      aria-selected="false">Боты: Telegram, MAX, ВК</button>
+      <button class="key" type="button" role="tab" id="k-memory"   data-slug="memory"   aria-controls="p-memory"   aria-selected="false">Страница памяти</button>
+      <button class="key" type="button" role="tab" id="k-cert"     data-slug="cert"     aria-controls="p-cert"     aria-selected="false">Сертификат на iPhone</button>
+      <button class="key" type="button" role="tab" id="k-fix"      data-slug="fix"      aria-controls="p-fix"      aria-selected="false">Доработка и запуск</button>
+      <button class="key" type="button" role="tab" id="k-fishing"  data-slug="fishing"  aria-controls="p-fishing"  aria-selected="false">Рыбалка у Иваныча</button>
+      <button class="key" type="button" role="tab" id="k-more"     data-slug="more"     aria-controls="p-more"     aria-selected="false">И не только</button>
+    </div>
+  </section>
+
+  <!-- Почему я -->
+  <section class="why" aria-labelledby="why-title">
+    <h2 class="why__title rise" id="why-title" style="--d:480ms">Почему я</h2>
+    <ul class="why__list rise" style="--d:540ms">
+      <li>
+        <h3>Работаю сам, без посредников</h3>
+        <p>Ты общаешься напрямую с тем, кто делает работу. Быстрые ответы и точное понимание задачи.</p>
+      </li>
+      <li>
+        <h3>Под задачу, а не по шаблону</h3>
+        <p>Каждый проект собираю с нуля: свой дизайн, чистый код, без лишнего веса.</p>
+      </li>
+      <li>
+        <h3>Удобно на любом экране</h3>
+        <p>Проверяю на часах, телефоне, планшете, ноутбуке и большом мониторе.</p>
+      </li>
+      <li>
+        <h3>Понятный процесс</h3>
+        <p>Сначала согласуем задачу, потом показываю промежуточный вариант и вношу правки. В конце запускаю и передаю рабочий результат.</p>
+      </li>
+      <li>
+        <h3>Надёжно и безопасно</h3>
+        <p>Проект должен не только красиво выглядеть, но и выдерживать реальную нагрузку. У сайта «Рыбалка у Иваныча», например, есть защита от DDoS-атак и от ботов с фейковыми заявками.</p>
       </li>
     </ul>
   </section>
 
-    <!-- Услуги -->
-    <section class="cat" id="services" data-icon="assets/icons/cat-services.svg">
-      <h2 class="cat__label">Услуги</h2>
-      <ul class="cat__items">
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/svc-site.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Сайты с нуля</span>
-              <span class="item__sub">Визитки, лендинги, сайты услуг. Без конструкторов, под твою задачу.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">Сайт, собранный руками под твой проект,</strong> а не шаблон с чужими блоками.</p>
-            <dl class="panel__facts"><div><dt>Что внутри</dt><dd>Свой дизайн, адаптация под телефон и компьютер, аккуратная разметка для поиска</dd></div><div><dt>Стек</dt><dd>HTML, CSS и JS</dd></div></dl>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/svc-bot.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Боты для Telegram, MAX и ВК</span>
-              <span class="item__sub">Заявки, оплата, рассылки и админ-панель. От простого до сложного.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">Бот, который работает за тебя.</strong> Принимает заявки, берёт оплату и держит связь с клиентами.</p>
-            <dl class="panel__facts"><div><dt>Платформы</dt><dd>Telegram, MAX, ВКонтакте</dd></div><div><dt>Умеют</dt><dd>Заявки, оплата, рассылки, админ-панель</dd></div><div><dt>Стек</dt><dd>Python, aiogram</dd></div></dl>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/proj-memory.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Страница памяти</span>
-              <span class="item__sub">Сайт о жизни близкого человека. Бережно, вручную, без шаблонов.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">На памятнике мало места, а у страницы его хватит,</strong> чтобы рассказать о человеке по-настоящему.</p>
-            <dl class="panel__facts"><div><dt>Что пришлёшь</dt><dd>Фото, факты из жизни и всё, чем хочешь поделиться. Из этого я соберу личную страницу</dd></div><div><dt>Где смотреть</dt><dd>На телефоне, планшете и компьютере. Ссылку можно отправить родным</dd></div><div><dt>QR-код</dt><dd>Табличка на памятнике, строчка в некрологе или мемориальная доска: навёл камеру и страница открыта</dd></div></dl>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/svc-cert.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Сертификаты на iPhone</span>
-              <span class="item__sub">Для MAX, ВКонтакте, Авито и любых приложений, которых нет в App Store.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">Приложение пропало из App Store или не запускается?</strong> Помогу поставить сертификат и всё настроить.</p>
-            <dl class="panel__facts"><div><dt>Приложения</dt><dd>MAX, ВКонтакте, Авито и любые другие, удалённые из App Store</dd></div><div><dt>Устройство</dt><dd>iPhone</dd></div><div><dt>Заказать</dt><dd><a href="https://t.me/ТВОЙ_НИК" target="_blank" rel="noopener">Написать в Telegram</a></dd></div></dl>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/svc-fix.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Доработка и запуск твоего проекта</span>
-              <span class="item__sub">Доработаю, проверю на ошибки или помогу запустить.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">Проект уже есть, но что-то не так или не получается довести до конца?</strong> Посмотрю и скажу, что с этим делать.</p>
-            <dl class="panel__facts"><div><dt>Доработать</dt><dd>Добавлю функции и улучшу то, что уже сделано</dd></div><div><dt>Проверить</dt><dd>Найду ошибки в сайте или боте и исправлю</dd></div><div><dt>Запустить</dt><dd>Помогу выложить проект в сеть и настроить, чтобы он заработал</dd></div><div><dt>Написать</dt><dd><a href="https://t.me/ТВОЙ_НИК" target="_blank" rel="noopener">Telegram</a></dd></div></dl>
-          </div>
-        </li>
-        <li class="item item--cta">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/svc-more.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">И не только</span>
-              <span class="item__sub">Нужно что-то другое? Напиши, скажу, возьмусь ли и за какой срок.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note panel__note--accent">Опиши задачу как есть, дальше разберёмся.</p>
-            <dl class="panel__facts"><div><dt>Написать</dt><dd><a href="https://t.me/ТВОЙ_НИК" target="_blank" rel="noopener">Telegram</a></dd></div></dl>
-          </div>
-        </li>
-      </ul>
-    </section>
+</main>
 
-    <!-- Мои проекты -->
-    <section class="cat" id="projects" data-icon="assets/icons/cat-projects.svg">
-      <h2 class="cat__label">Мои проекты</h2>
-      <ul class="cat__items">
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/proj-memory.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Страница памяти</span>
-              <span class="item__sub">Сайт-биография ушедшего родственника и QR-код, который можно распечатать.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">Память о близком человеке в одной странице.</strong> Ты присылаешь данные, я собираю биографию и оформляю её так, как скажешь.</p>
-            <dl class="panel__facts"><div><dt>Как работаем</dt><dd>Присылаешь данные о человеке, утверждаем дизайн, и я приступаю к работе</dd></div><div><dt>Что получаешь</dt><dd>Страницу памяти и QR-код для печати</dd></div></dl>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/proj-fish.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Рыбалка у Иваныча</span>
-              <span class="item__sub">Сайт рыболовной базы с бронированием и админ-панелью.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">Сайт с нуля, без конструкторов:</strong> всё на HTML, CSS и JS. Гость бронирует сам, администратор разбирает заявки в своей панели.</p>
-            <dl class="panel__facts"><div><dt>Бронирование</dt><dd>С мониторингом и собственной базой данных</dd></div><div><dt>Защита</dt><dd>От DDoS-атак и ботов, которые шлют фейковые заявки</dd></div><div><dt>Админ-панель</dt><dd>Обработка заявок от клиентов</dd></div></dl>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Почему стоит брать услугу у меня: примеры сайтов и ботов -->
-    <section class="cat" id="why" data-icon="assets/icons/cat-why.svg">
-      <h2 class="cat__label">Почему я</h2>
-      <ul class="cat__items">
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/why-person.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Работаю сам, без посредников</span>
-              <span class="item__sub">Ты общаешься напрямую с тем, кто делает работу.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">Никаких менеджеров и передачи задачи по цепочке.</strong> Всё, что обсудили, делаю я сам, поэтому ничего не теряется по дороге.</p>
-            <dl class="panel__facts"><div><dt>С кем говоришь</dt><dd>Со мной, от первого сообщения до сдачи</dd></div><div><dt>Что это даёт</dt><dd>Быстрые ответы и точное понимание задачи</dd></div><div><dt>Связь</dt><dd>Telegram</dd></div></dl>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/why-code.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Под задачу, а не по шаблону</span>
-              <span class="item__sub">Каждый проект собираю с нуля под конкретную цель.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">Готовые шаблоны и конструкторы подходят всем и никому по-настоящему.</strong> Я делаю только то, что нужно именно тебе.</p>
-            <dl class="panel__facts"><div><dt>Сайты</dt><dd>Свой дизайн, чистый HTML, CSS и JS, без лишнего веса</dd></div><div><dt>Боты</dt><dd>Python и aiogram: заявки, оплата, рассылки, админ-панель</dd></div><div><dt>Платформы</dt><dd>Telegram, MAX, ВКонтакте</dd></div></dl>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/why-watch.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Удобно на любом экране</span>
-              <span class="item__sub">Телефон, планшет, компьютер, даже часы.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">Результат проверяю на разных устройствах,</strong> чтобы текст читался, кнопки нажимались и ничего не уезжало за край.</p>
-            <dl class="panel__facts"><div><dt>Твой экран</dt><dd><span id="screenSize">…</span></dd></div><div><dt>Проверяю</dt><dd>Часы, телефон, планшет, ноутбук, большой монитор</dd></div><div><dt>Проверь сам</dt><dd>Потяни окно браузера до самого узкого</dd></div></dl>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/why-steps.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Понятный процесс</span>
-              <span class="item__sub">Ты всегда знаешь, на каком этапе работа.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">Между «хочу» и «готово» нет неизвестности.</strong> Сначала согласуем, что получишь, потом показываю результат и правим вместе.</p>
-            <dl class="panel__facts"><div><dt>Сначала</dt><dd>Разбираем задачу и утверждаем, что именно делаем (для сайтов и страниц памяти согласуем дизайн)</dd></div><div><dt>Потом</dt><dd>Собираю, показываю промежуточный вариант, вношу правки</dd></div><div><dt>В конце</dt><dd>Запускаю, проверяю и передаю рабочий результат</dd></div></dl>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/why-shield.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Надёжно и безопасно</span>
-              <span class="item__sub">Думаю не только о внешнем виде, но и о защите.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note"><strong class="hl">Проект должен не только красиво выглядеть, но и выдерживать реальную нагрузку.</strong> Например, у сайта «Рыбалка у Иваныча» есть защита от DDoS-атак и от ботов с фейковыми заявками.</p>
-            <dl class="panel__facts"><div><dt>Данные</dt><dd>Собственная база данных там, где она нужна</dd></div><div><dt>Защита</dt><dd>От атак и поддельных заявок</dd></div><div><dt>Управление</dt><dd>Админ-панель для работы с заявками</dd></div></dl>
-          </div>
-        </li>
-        <li class="item item--cta">
-          <div class="item__row">
-            <span class="item__icon"><img src="assets/icons/why-chat.svg" alt=""></span>
-            <span class="item__text">
-              <span class="item__title">Расскажи, что нужно</span>
-              <span class="item__sub">Идея может быть сырой, это нормально.</span>
-            </span>
-          </div>
-          <div class="item__panel">
-            <p class="panel__note panel__note--accent">Опиши задачу как есть, а дальше разберёмся вместе.</p>
-            <dl class="panel__facts"><div><dt>Делаю</dt><dd>Сайты, ботов, страницы памяти, настройку сертификатов на iPhone</dd></div><div><dt>Начать</dt><dd><a href="https://t.me/ТВОЙ_НИК" target="_blank" rel="noopener">Написать в Telegram</a></dd></div></dl>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Контакты -->
-    <section class="cat" id="links" data-icon="assets/icons/cat-contacts.svg">
-      <h2 class="cat__label">Контакты</h2>
-      <ul class="cat__items">
-        <li class="item"><a class="item__row" href="https://t.me/ТВОЙ_НИК" target="_blank" rel="noopener"><span class="item__icon"><img src="assets/icons/link-telegram.svg" alt=""></span><span class="item__text"><span class="item__title">Telegram</span><span class="item__sub">Писать сюда: отвечу лично</span></span></a></li>
-        <li class="item"><a class="item__row" href="https://github.com/Danya29745" target="_blank" rel="noopener"><span class="item__icon"><img src="assets/icons/link-github.svg" alt=""></span><span class="item__text"><span class="item__title">GitHub</span><span class="item__sub">github.com/Danya29745</span></span></a></li>
-      </ul>
-    </section>
-
-  </main>
-
-  <!-- Первая фраза для тех, кто зашёл по ссылке: что это за сайт -->
-  <header class="hero">
-    <h1 class="hero__title">Данил — делаю сайты и ботов</h1>
-    <p class="hero__sub">Для Telegram, ВКонтакте и MAX. Опиши задачу — получишь рабочий результат.</p>
-  </header>
-
-  <p class="hint" id="hint" aria-hidden="true"><span class="hint__k">← →</span> разделы <span class="hint__k">↑ ↓</span> пункты</p>
-
-  <script src="js/waves.js"></script>
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
